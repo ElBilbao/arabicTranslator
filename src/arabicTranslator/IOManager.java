@@ -8,20 +8,19 @@ public class IOManager {
     private String outputNumber;
 
     public void recieveInput() {
-        System.out.println("Please input the number: ");
+        System.out.print("Numero: ");
         String number = myObj.nextLine();
         if (validateInput(number)) {
             setInputNumber(number);
         } else {
-            System.out.println("Invalid input. Please try again./n");
-            System.out.println("Only input numbers./n");
-            System.out.println("1-6 digits./n");
+            System.out.println("ERROR: Numero invalido");
+            System.out.println("Solo se pueden introducir numeros de 0-9999.");
             recieveInput();
         }
     }
 
     public void printOutput() {
-        System.out.println("-----------------------------------------------------------");
+        System.out.println("---------------------[Resultados]---------------------");
         System.out.println("Forma numerica: " + getInputNumber());
         System.out.println("Forma escrita: " + getOutputNumber());
     }
@@ -43,7 +42,7 @@ public class IOManager {
     }
 
     private boolean validateInput(String number) {
-        if (0 < number.length() && number.length() <= 6 && number.matches("[0-9]+")) {
+        if (0 < number.length() && number.length() <= 4 && number.matches("[0-9]+")) {
             return true;
         } else {
             return false;

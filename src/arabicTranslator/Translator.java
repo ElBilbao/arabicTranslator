@@ -4,7 +4,7 @@ public class Translator {
     private String number;
     private String text = "";
     private String[] numberList = { "cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve",
-            "diez", "once", "doce", "trece", "catorce", "quince" };
+            "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve"};
     private String[] twentyList = { "veintiuno", "veintidos", "veintitres", "veinticuatro", "veinticinco", "veintiseis",
             "veintisiete", "veintiocho", "veintinueve" };
     private String[] tensList = { "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta",
@@ -14,7 +14,7 @@ public class Translator {
 
     public void process() {
         int numberInt = Integer.parseInt(getNumber());
-        if (numberInt <= 15) {
+        if (numberInt <= 19) {
             setText(numberList[numberInt]);
         } else {
             if (getNumber().length() == 2) {
