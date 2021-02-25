@@ -1,5 +1,8 @@
 package arabicTranslator;
 
+/**
+ * Class that translates a given number into its textual form.
+ */
 public class Translator {
     private String number;
     private String text = "";
@@ -12,6 +15,9 @@ public class Translator {
     private String[] hundredsList = { "ciento", "docientos", "trecientos", "cuatrocientos", "quinientos", "seiscientos",
             "sietecientos", "ochocientos", "nuevecientos" };
 
+    /**
+     * Method that evaluates and generates the textual form of the number
+     */
     public void process() {
         int numberInt = Integer.parseInt(getNumber());
         if (numberInt <= 19) {
@@ -35,22 +41,42 @@ public class Translator {
         }
     }
 
+    /**
+     * Method to get the number being translated
+     * @return String with the number being translated
+     */
     public String getNumber() {
         return number;
     }
 
+    /**
+     * Method to get the textual version of the given number
+     * @return String with the textual version of the given number
+     */
     public String getText() {
         return text;
     }
 
+    /**
+     * Method that sets a new number
+     * @param newnumber String with the new number
+     */
     public void setNumber(String newnumber) {
         number = newnumber;
     }
 
+    /**
+     * Method to add a new number to the textual form
+     * @param newnumber String with the new textual new element of the number
+     */
     public void setText(String newnumber) {
         text += newnumber;
     }
 
+    /**
+     * Method that translates numbers in the tens place
+     * @param number String with the number
+     */
     private void translationTens(String number) {
         int numberInt = Integer.parseInt(number);
         if (!number.equals("00")) {
@@ -69,6 +95,10 @@ public class Translator {
 
     }
 
+    /**
+     * Method that translates numbers in the hundreds place
+     * @param number String with the number
+     */
     private void translationHundreds(String number) {
         if (number.charAt(0) == '0') {
             translationTens(number.substring(1, 3));
@@ -87,6 +117,10 @@ public class Translator {
         }
     }
 
+    /**
+     * Method that translates numbers in the thousands place
+     * @param number String with the number
+     */
     private void translationThousands(String number) {
         if (number.charAt(0) == '1') {
             setText("mil ");
