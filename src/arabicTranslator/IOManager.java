@@ -21,7 +21,9 @@ public class IOManager {
     }
 
     public void printOutput() {
-        System.out.println("Numberic form: " + inputNumber);
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("Forma numerica: " + getInputNumber());
+        System.out.println("Forma escrita: " + getOutputNumber());
     }
 
     public String getInputNumber() {

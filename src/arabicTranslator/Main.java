@@ -8,16 +8,20 @@ public class Main {
         Main main = new Main();
         main.setNumber();
         main.translate();
+        main.getNumber();
     }
 
     public void setNumber(){
         ioManager.recieveInput();
         translator.setNumber(ioManager.getInputNumber());
-        ioManager.printOutput();
     }
 
     public void translate(){
         translator.process();
-        System.out.println(translator.getText());
+        ioManager.setOutputNumber(translator.getText());
+    }
+
+    public void getNumber(){
+        ioManager.printOutput();
     }
 }
